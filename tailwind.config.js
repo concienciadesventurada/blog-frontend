@@ -5,6 +5,10 @@ export default {
     './src/**/*.{js,jsx,ts,tsx,vue}',
   ],
   theme: {
+    listStyleType: {
+      square: 'square',
+      roman: 'upper-roman',
+    },
     screens: {
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
@@ -22,6 +26,14 @@ export default {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      colors: {
+        'gris': '#1E2022',
+        'celestucho': '#d6e0f0',
+        'celestucho2': '#c9d6df',
+        'grisstacy': '#8d93ab',
+        'blancucho': '#F1F3F8',
+        'cv': '#f0f5f9'
+      }
     }
   },
   plugins: [],

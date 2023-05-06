@@ -1,0 +1,90 @@
+<script setup lang="ts">
+import IconoTecnologia from './components/IconoTecnologia.vue'
+import Proyecto from './components/Proyecto.vue'
+import { MongodbIcon, ExpressIcon, TailwindcssIcon, ReactIcon, DockerIcon, NodedotjsIcon, PostgresqlIcon, VuedotjsIcon, NeovimIcon, ArchlinuxIcon, FedoraIcon, LinuxIcon, DotenvIcon, RlanguageIcon, TypescriptIcon, ViteIcon, TmuxIcon, LodashIcon, GnubashIcon, CplusplusIcon, CIcon, MongooseIcon, PostcssIcon } from 'vue3-simple-icons'
+
+const techStackEhyf = [
+  {
+  icon: MongodbIcon,
+  title: "MongoDB"
+  },
+  {
+  icon: ExpressIcon,
+  title: "Express"
+  },
+  {
+  icon: ReactIcon,
+  title: "React"
+  },
+  {
+  icon: NodedotjsIcon,
+  title: "NodeJS"
+  },
+  {
+  icon: DockerIcon,
+  title: "Docker"
+  }
+]
+
+const loremIpsum: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget felis eget nunc lobortis mattis. Eu consequat ac felis donec et odio. Scelerisque eu ultrices vitae auctor eu augue ut lectus. Volutpat odio facilisis mauris sit amet massa vitae. Odio ut enim blandit volutpat maecenas. Eu nisl nunc mi ipsum faucibus. Justo nec ultrices dui sapien eget mi proin sed. Nulla facilisi cras fermentum odio eu feugiat pretium. Proin libero nunc consequat interdum varius. Nunc eget lorem dolor sed viverra ipsum nunc. Lorem donec massa sapien faucibus et. Eget nullam non nisi est sit. Sapien eget mi proin sed libero enim. Eu facilisis sed odio morbi quis commodo odio. Dui sapien eget mi proin sed."
+</script>
+
+<template>
+  <main class="grid bg-cv">
+    <aside class="bg-gris h-screen">
+      <div>
+        <div class="rounded-full w-40 h-40 bg-red-500"></div>
+      </div>
+      <div>
+        <h1>Matias Martinez</h1>
+      </div>
+    </aside>
+    <section class="col-span-full bg-cv p-2 border-2 border-red-900" name="proyectos">
+      <h1 class="font-bold text-lg">Proyectos</h1>
+
+      <Proyecto :loremIpsum="loremIpsum" :techStack="techStackEhyf" />
+
+      <article class="m-2 px-4 border">
+        <header class="flex justify-between font-bold">
+          <div>
+            <h2>Entre Hielo y Fuego</h2>
+          </div>
+          <div class="flex justify-evenly text-right">
+            <div class="font-normal italic px-2">
+              <h3>Marzo-Abril 2023</h3>
+            </div>
+            <div>
+              <h3>Continuous Integration</h3>
+            </div>
+          </div>
+        </header>
+        <main class="py-2">
+          <div>
+            <p>{{ loremIpsum.slice(0, 250) }}</p>
+          </div>
+        </main>
+        <footer class="grid grid-cols-2">
+          <div class="text-md px-4">
+            <ul>
+              <li>{{ loremIpsum.slice(0, 85) }}</li>
+              <li>{{ loremIpsum.slice(0, 45) }}</li>
+              <li>{{ loremIpsum.slice(0, 55) }}</li>
+              <li>{{ loremIpsum.slice(0, 105) }}</li>
+              <li>{{ loremIpsum.slice(0, 35) }}</li>
+            </ul>
+          </div>
+          <div class="flex items-center justify-around border border-violet-300 bg-celestucho">
+            <IconoTecnologia :icon="PostgresqlIcon" title="PostgreSQL" />
+            <IconoTecnologia :icon="ExpressIcon" title="Express" />
+            <IconoTecnologia :icon="VuedotjsIcon" title="VueJS" />
+            <IconoTecnologia :icon="NodedotjsIcon" title="NodeJS" />
+            <IconoTecnologia :icon="DockerIcon" title="Docker" />
+          </div>
+        </footer>
+      </article>
+      <Proyecto :loremIpsum="loremIpsum" :techStack="techStackEhyf" />
+      <Proyecto :loremIpsum="loremIpsum" :techStack="techStackEhyf" />
+    </section>
+  </main>
+</template>
+
