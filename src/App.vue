@@ -39,9 +39,9 @@ const ayh = {
     "Applied users for comment sections and OAuth.",
   ],
   techStack: [
-    { icon: PostgresqlIcon, title: "MongoDB" },
+    { icon: PostgresqlIcon, title: "PostgreSQL" },
     { icon: ExpressIcon, title: "Express" },
-    { icon: VuedotjsIcon, title: "React" },
+    { icon: VuedotjsIcon, title: "VueJS" },
     { icon: NodedotjsIcon, title: "NodeJS" },
     { icon: TailwindcssIcon, title: "TailwindCSS" }
   ]
