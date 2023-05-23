@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import NavBar from './components/NavBar.vue'
 import Proyecto from './components/Proyecto.vue'
 import { MongodbIcon, ExpressIcon, TailwindcssIcon, ReactIcon, DockerIcon, NodedotjsIcon, PostgresqlIcon, VuedotjsIcon, NeovimIcon, ArchlinuxIcon, FedoraIcon, LinuxIcon, DotenvIcon, RIcon, TypescriptIcon, ViteIcon, TmuxIcon, LodashIcon, GnubashIcon, CplusplusIcon, CIcon, MongooseIcon, PostcssIcon } from 'vue3-simple-icons'
 
 const ehyf = {
-  nombre: "Entre Hielo y Fuego",
+  nombre: "Entre Hielo y Fuego catering's service web app",
   fecha: "Marzo-Abril 2023",
-  estado: "Deployed",
+  estado: "CI - CD",
   descripcion: "A quoting tool, interactive menu, reservation system for a catering service. Automated before manual calculations and labor-intensive customer service.",
   puntos: [
     "Layed out in Figma. Tailor-made for company’s target audience using TailwindCSS and some MaterialUI components.",
@@ -28,7 +27,7 @@ const ehyf = {
 }
 
 const ayh = {
-  nombre: "Acólito y Hereje",
+  nombre: "Acolito y Hereje",
   fecha: "May 2023",
   descripcion: "My portfolio and blog made with love from scratch as a exploratory project to learn VueJS, Typescript and PostgreSQL.",
   estado: "In development",
@@ -82,8 +81,9 @@ const fedoraHapless = {
   nombre: "fedoraHapless",
   fecha: "Aug-Oct - 2022",
   estado: "Archived",
-  descripcion: "A bash script that converts a fresh install of Fedora Server version to a Full Desktop Environment.",
+  descripcion: ".",
   puntos: [
+  "A bash script that converts a fresh install of Fedora Server version to a Full Desktop Environment.",
   "For a fast and lightweight installation uses LightDM and bspwm.",
   "Automatically install development packages, applications and imports my personal configurations.",
   "Functions both as a backup and installer of my Linux daily-driver.",
@@ -98,13 +98,19 @@ const fedoraHapless = {
 </script>
 
 <template>
-  <main class="w-screen h-screen">
-    <NavBar />
-    <section class="flex-col m-2"
-      name="proyectos">
-      <h1 class="font-bold text-2xl m-2">Proyectos</h1>
-      <Proyecto :proyecto="ayh" />
+  <main class="grid grid-cols-[20rem_auto] bg-cv">
+    <aside class="flex flex-col justify-center items-center bg-gris h-screen">
+      <div>
+        <div class="rounded-full w-40 h-40 bg-red-500"></div>
+      </div>
+      <div>
+        <h1 class="font-bold text-white text-2xl">Matias Martinez</h1>
+      </div>
+    </aside>
+    <section class="flex-col bg-cv p-2 border-2 border-red-900" name="proyectos">
+      <h1 class="font-bold text-3xl">Proyectos</h1>
       <Proyecto :proyecto="ehyf" />
+      <Proyecto :proyecto="ayh" />
       <Proyecto :proyecto="absolutePixel" />
       <Proyecto :proyecto="freqTab" />
       <Proyecto :proyecto="fedoraHapless" />

@@ -1,34 +1,49 @@
 <template>
-  <article class="m-4 px-4 border">
-    <header class="flex justify-between font-bold">
-      <div class="font-bold text-2xl">
-        <h2>{{ proyecto.nombre }}</h2>
-      </div>
-      <div class="flex justify-evenly text-right">
-        <div class="font-normal italic px-2">
-          <h3>{{ proyecto.fecha }}</h3>
+  <article class="m-4 border p-4 text-justify">
+    <header class="sm:flex
+      md:flex-row
+      justify-between font-bold
+      "
+      >
+      <div class="font-bold
+        text-xl
+        md:text-3xl
+        "
+        >
+        <div class="flex items-center">
+          <h class="rounded-md drop-shadow-sm">{{ proyecto.nombre }}</h>
+          <div class="rounded-md text-xs ml-4 px-2 py-1 text-gray-500"
+            :class="{ 'bg-verde' : proyecto.estado === 'CI - CD' || proyecto.estado === 'Deployed', 'bg-dorado' : proyecto.estado === 'Archived', 'bg-azulito' : proyecto.estado === 'In development'}"
+            >
+            <p>{{ proyecto.estado }}</p>
+          </div>
         </div>
-        <div>
-          <h3>{{ proyecto.estado }}</h3>
+        <hr class="my-1 border-4 border-celestucho">
+        <div class="flex items-end justify-end">
+          <h class="text-right text-xs italic font-normal my-2 text-gris">{{ proyecto.fecha }}</h>
         </div>
       </div>
     </header>
-    <hr class="border-2 border-celestucho">
-    <main class="py-2">
-      <div class="text-lg">
-        <p>{{ proyecto.descripcion }}</p>
+
+    <section class="rounded-md">
+      <div class="text-sm text-justify my-3">
+        <p class="rounded-md">{{ proyecto.descripcion }}</p>
       </div>
-    </main>
-    <footer class="grid grid-cols-2">
-      <div class="text-md px-4">
-        <ul>
-          <li v-for="punto in proyecto.puntos" :key="punto" class="list-[square]">{{ punto }}</li>
-        </ul>
-      </div>
-      <div class="flex items-center justify-around border border-violet-300 bg-celestucho2 max-h-[166px]">
-        <IconoTecnologia v-for="tec in proyecto.techStack" :key="tec.title" :icon="tec.icon" :title="tec.title" />
-      </div>
-    </footer>
+      <footer class="flex-col
+        md:grid md:grid-cols-2
+        ">
+        <div class="">
+          <ul>
+            <li v-for="punto in proyecto.puntos" :key="punto" class="text-sm py-1">- {{ punto }}</li>
+          </ul>
+        </div>
+        <div class="flex items-center flex-wrap justify-evenly bg-celestucho2 my-2 rounded-md
+          lg:max-h-[166px] md:my-auto
+          ">
+          <IconoTecnologia v-for="tec in proyecto.techStack" :key="tec.title" :icon="tec.icon" :title="tec.title" />
+        </div>
+      </footer>
+    </section>
   </article>
 </template>
 

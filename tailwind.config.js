@@ -32,7 +32,11 @@ export default {
         'celestucho2': '#c9d6df',
         'grisstacy': '#8d93ab',
         'blancucho': '#F1F3F8',
-        'cv': '#f0f5f9'
+        'cv': '#f0f5f9',
+        'dorado': '#FFE194',
+        'verde': '#C9F4AA',
+        'rojo': '#F48484',
+        'azulito': '#AEE2FF'
       }
     }
   },
